@@ -3,7 +3,7 @@
 
 MobiVision is a fully automated device/application which tracks and displays how safely you've been driving. Simply plug the device in and start driving and you'll see the results of your trip on the MobiVision website shortly after you've finished driving.
 
-This was made possible by using resources from AWS, Azure Maps REST API, Django Framework, as well as many python scripts to process the collected data.
+This was created by using resources from AWS, Azure Maps REST API, Django Framework, as well as many python scripts to process the collected data.
 
 <h2>MobiVision Website</h2>
 <h3>Recent Trips Page</h3>
