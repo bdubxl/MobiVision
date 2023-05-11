@@ -1,0 +1,61 @@
+{% load static %}
+{% load django_template_maths %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+
+<body style="background-color:#F1F1F1;">
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="">MobiVision</a>
+</nav>
+
+
+<img class="rounded" align="right" src="{% static "" %}{{tripdate}}.png" style="width:700px;height:700px;">
+
+<ul class="list-group">
+
+{% for event in events %}
+
+{% if event.flags == 'Ran Stop Sign' %}
+
+<li class="list-group-item">{{event.lat}}, {{event.lon}}, Ran Stop sign at {{event.speed}}mph</li>
+
+{% endif %}
+
+{% if event.flags == 'Hard Cornering' %}
+
+<li class="list-group-item">{{event.lat}}, {{event.lon}}, Turned Corner at {{event.yacc}} G's</li>
+
+{% endif %}
+
+{% if event.flags == 'Hard Acceleration' %}
+
+<li class="list-group-item">{{event.lat}}, {{event.lon}}, Accelerated from {{event.speed|sub:8|add_decimal:0}}mph to {{event.speed}}mph in one second</l1>
+
+{% endif %}
+  
+{% if event.flags == 'Speeding' %}
+
+<li class="list-group-item">{{event.lat}}, {{event.lon}}, Speed Limit surpassed by Over 5mph, Going {{event.speed}}mph </l1>
+
+{% endif %}
+
+{% if event.flags == 'Hard Breaking' %}
+
+<li class="list-group-item">{{event.lat}}, {{event.lon}}, Deccelerated from {{event.speed|add:8|add_decimal:0}}mph to {{event.speed}}mph in one second</li>
+{% endif %}
+{% endfor %}
+</ul>
+<h2 align="right">WHITE = START POINT, BLACK = END POINT</h2>
+<h2 align="right" style="color:blue;">Hard Breaking</h2>
+<h2 align="right" style="color:green;">Hard Cornering</h2>
+<h2 align="right" style="color:orange;">Hard Acceleration</h2>
+<h2 align="right" style="color:darkred;">Speeding</h2>
+<h2 align="right" style="color:red;">Ran Stop Sign</h2>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Trips Table:
+CREATE TABLE Trips(
+
+	tripdate varchar(255) primary key
+
+);
+
+Events Table:
+CREATE TABLE Events(
+
+	tripdate varchar(255) references Trips(tripdate),
+	lat varchar(255),
+	lon varchar(255),
+	speed varchar(255),
+	xacc varchar(255),
+	yacc varchar(255),
+	sec varchar(255),
+	flags varchar(255)
+	
+);

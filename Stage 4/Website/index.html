@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MobiVision</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="">MobiVision</a>
+</nav>
+
+<form action="" method="post">
+{% csrf_token %}
+{% for trip in trips %}
+<button name="tripdate" value="{{trip.tripdate}}">
+<img src="{% static "" %}{{trip.tripdate}}.png" style="width:300px;height:300px;">
+<div class="top-middle">{{trip}}</div>
+</button>
+{% endfor %}
+</form>
+</body>
+</html>
