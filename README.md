@@ -239,7 +239,7 @@ https://github.com/bdubxl/MobiVision/blob/0cc6c821ee529e94e98ffd82eb0b688475f0db
 
 The start and end points (White and Black) follow the same logic as the flag circles
 
-Once we have this final map, to display it on our website our webserver is listening (same logic as stage 2 and stage 4) for a sqs message from a png upload to the stage 4 bucket. Once received the webserver will automatically save it to it's static files to be viewed on the website. https://github.com/bdubxl/CSVMapVisualizer/blob/main/Stage%204/Website/autostatic.py
+Once we have this final map, to display it on our website our webserver is listening (same logic as stage 2 and stage 4) for a sqs message from a png upload to the stage 4 bucket. Once received the webserver will automatically save it to it's static files to be viewed on the website. https://github.com/bdubxl/MobiVision/blob/main/Stage%204/Website/autostatic.py
 
 After configuring or settings.py file for connectivity with our database, using Django's "inspect.db" tool we make migrate the exact arrangement of the tables into our models.py file.
 https://github.com/bdubxl/MobiVision/blob/0cc6c821ee529e94e98ffd82eb0b688475f0db92/Stage%204/Website/models.py#L3-L29
