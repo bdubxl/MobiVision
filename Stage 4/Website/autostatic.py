@@ -1,5 +1,6 @@
 ﻿import boto3
 import json
+import os
 
 #Runs in background waiting for new gps visualizations to be dropped in stage 4 bucket (.png event notification)
 
