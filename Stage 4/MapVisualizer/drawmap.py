@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
+import os
 import csv
 import sys
 import boto3
