@@ -32,28 +32,7 @@ def create_map(path, csv_path, coords): #Visualize points from csv onto map with
     global wid, hei
     wid, hei = img.size #Width and height of image in pixles
     pixels = wid*hei #Total number of pixels in image
-    f_const = 0
-
-    if pixels >= 4000000: #Change flag constant depending on the size of the image so size of circles will change
-    	f_const = pixels * 0.0000025
-    elif pixels >= 2000000:
-        f_const = pixels * 0.000005
-    elif pixels >= 1000000:
-        f_const = pixels * 0.00001
-    elif pixels >= 500000:
-        f_const = pixels * 0.00002
-    elif pixels >= 250000:
-        f_const = pixels * 0.00004
-    elif pixels >= 125000:
-        f_const = pixels * 0.00008
-    elif pixels >= 62500:
-        f_const = pixels * 0.00016
-    elif pixels >= 31250:
-        f_const = pixels * 0.00032
-    elif pixels >= 15625:
-        f_const = pixels * 0.00064
-    else:
-        f_const = pixels * 0.00128
+    f_const = 10
 
     file = open(csv_path, 'r', newline='')
     reader = csv.reader(file)
