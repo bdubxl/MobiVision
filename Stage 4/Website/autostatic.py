@@ -3,7 +3,6 @@ import json
 import os
 
 #Runs in background waiting for new gps visualizations to be dropped in stage 4 bucket (.png event notification)
-
 sqs = boto3.client(
         'sqs',
         region_name='us-east-1',
