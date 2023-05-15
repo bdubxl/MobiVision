@@ -31,7 +31,6 @@ def create_map(path, csv_path, coords): #Visualize points from csv onto map with
     img = Image.open(path)
     global wid, hei
     wid, hei = img.size #Width and height of image in pixles
-    pixels = wid*hei #Total number of pixels in image
     f_const = 10
 
     file = open(csv_path, 'r', newline='')
