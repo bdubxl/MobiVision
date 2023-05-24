@@ -77,14 +77,11 @@ def create_map(path, csv_path, coords): #Visualize points from csv onto map with
     draw = ImageDraw.Draw(img)
 
     #Draw line for image points and circle with color for flag points
-    for i in range(len(img_points)):
-        try:
-            if img_points[i+1]:
-                line = img_points[i][0], img_points[i][1], img_points[i+1][0], img_points[i+1][1]
-                draw.line(line, fill=(0,0,255), width=4)
-            else:
-                break
-        except:
+    for i in range(len(img_points) - 1):
+        if img_points[i+1]:
+            line = img_points[i][0], img_points[i][1], img_points[i+1][0], img_points[i+1][1]
+            draw.line(line, fill=(0,0,255), width=4)
+        else:
             break
 
     for flag in flag_points: #Draw flag circles
